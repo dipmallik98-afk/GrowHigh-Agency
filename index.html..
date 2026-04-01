@@ -1,0 +1,112 @@
+import React, { useEffect } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { FaFacebook, FaInstagram, FaWhatsapp, FaEnvelope, FaUserTie, FaInfoCircle, FaStar } from "react-icons/fa";
+
+const services = [
+  "Google Reviews",
+  "Bad Reviews Delete",
+  "Google Granted Reviews",
+  "Google Local Service Reviews (LSA)",
+  "Yell Reviews",
+  "Bark Reviews",
+  "Facebook Reviews",
+  "Website Reviews",
+  "Website Design + SEO",
+  "Google Map SEO",
+  "Web Design",
+  "Product Listing",
+  "Graphics Design",
+  "Digital Marketing",
+  "Instagram Marketing + Ads",
+  "Facebook Marketing + Ads",
+  "Instagram Likes & Followers",
+  "Facebook Likes & Followers",
+  "Local SEO Optimisation"
+];
+
+export default function GrowHighAgency() {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const smoothX = useSpring(x, { damping: 20, stiffness: 100 });
+  const smoothY = useSpring(y, { damping: 20, stiffness: 100 });
+
+  useEffect(() => {
+    const moveCursor = (e) => {
+      x.set(e.clientX);
+      y.set(e.clientY);
+    };
+    window.addEventListener("mousemove", moveCursor);
+    return () => window.removeEventListener("mousemove", moveCursor);
+  }, []);
+
+  return (
+    <div className="relative min-h-screen text-white overflow-hidden">
+
+      {/* Fixed Background */}
+      <div className="absolute w-full h-full top-0 left-0">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Background" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-black/70" />
+      </div>
+
+      {/* Cursor Glow */}
+      <motion.div style={{ left: smoothX, top: smoothY }}
+        className="fixed w-32 md:w-40 h-32 md:h-40 bg-green-500/20 rounded-full blur-3xl pointer-events-none z-50" />
+
+      {/* Content */}
+      <div className="relative z-10 p-4 md:p-6">
+
+        {/* Hero */}
+        <section className="text-center py-16 md:py-24 px-2 md:px-0">
+          <motion.h1 initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }}
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+            GrowHigh Agency
+          </motion.h1>
+
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+            className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-xl md:max-w-4xl mx-auto font-semibold">
+            Scale your business with cutting-edge SEO & marketing services.
+          </motion.p>
+
+          <motion.div animate={{ scale: [1, 1.12, 1] }} transition={{ repeat: Infinity, duration: 2 }} className="mt-6 md:mt-8">
+            <Button className="bg-green-500 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-lg sm:text-xl md:text-2xl font-bold">Get Clients Now 🚀</Button>
+          </motion.div>
+        </section>
+
+        {/* Guarantee Section Before Services */}
+        <section className="mt-12 md:mt-16 text-center flex flex-col items-center justify-center gap-4">
+          <motion.div animate={{ scale: [0.9, 1.05, 1] }} transition={{ repeat: Infinity, duration: 2 }} className="flex items-center gap-3">
+            <FaStar className="text-yellow-400 text-2xl md:text-3xl" />
+            <FaStar className="text-yellow-400 text-2xl md:text-3xl" />
+            <FaStar className="text-yellow-400 text-2xl md:text-3xl" />
+            <FaStar className="text-yellow-400 text-2xl md:text-3xl" />
+            <FaStar className="text-yellow-400 text-2xl md:text-3xl" />
+          </motion.div>
+          <p className="text-gray-300 text-lg md:text-xl font-semibold max-w-2xl">
+            If I can't increase your business sales after taking services, I will refund double money.
+          </p>
+        </section>
+
+        {/* Services (Responsive Grid) */}
+        <section className="mt-12 md:mt-20 px-2 sm:px-4 md:px-0">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-8 md:mb-12">Our Services</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+            {services.map((service, index) => (
+              <motion.div key={index} whileHover={{ scale: 1.08, rotate: 2 }}
+                initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}>
+
+                <Card className="rounded-2xl md:rounded-3xl border border-gray-700 bg-gray-900/80 backdrop-blur-xl hover:shadow-green-500/30">
+                  <CardContent className="p-4 sm:p-6 md:p-8 text-center">
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-green-400">{service}</h2>
+                  </CardContent>
+                </Card>
+
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* Additional Info / Stats */}
+        <section classN
