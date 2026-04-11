@@ -1,1 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GrowHigh Agency</title>
 
+<!-- Particle JS CDN -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;scroll-behavior:smooth;}
+body{
+  color:#fff;
+  background:url('https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+#particles-js{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:0;
+  top:0;
+  left:0;
+}
+
+.overlay{
+  background:rgba(0,0,50,0.78);
+  min-height:100vh;
+  padding:20px;
+  position:relative;
+  z-index:1;
+}
+
+header{
+  text-align:center;
+  padding:60px 10px;
+  animation:fadeDown 1s ease-in-out;
+}
+
+h1{
+  font-size:45px;
+  color:#00ffcc;
+  text-shadow:0 0 10px #00ffcc;
+}
+
+.summary{
+  margin-top:10px;
+  font-size:18px;
+  color:#ffffff;
+  opacity:0.9;
+}
+
+.section{
+  margin:30px auto;
+  max-width:1000px;
+  animation:fadeUp 1s ease;
+}
+
+.card{
+  background:rgba(0,0,0,0.55);
+  margin:10px 0;
+  padding:15px;
+  border-left:4px solid #00ffcc;
+  cursor:pointer;
+  transition:0.3s;
+  border-radius:8px;
+}
+
+.card:hover{
+  transform:scale(1.02);
+  box-shadow:0 0 15px rgba(0,255,204,0.3);
+}
+
+.details{
+  display:none;
+  padding:10px;
+  color:#ccefff;
+  animation:fadeIn 0.5s ease;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:15px;
+  text-align:center;
+}
+
+.stat-box{
+  background:rgba(0,0,0,0.55);
+  padding:15px;
+  border-radius:10px;
+  animation:zoomIn 1s ease;
+}
+
+.reviews{
+  margin-top:30px;
+}
+
+.review{
+  background:rgba(0,0,0,0.55);
+  margin:10px 0;
+  padding:15px;
+  border-radius:10px;
+  animation:fadeUp 1s ease;
+}
+
+.footer{
+  text-align:center;
+  margin-top:40px;
+  padding:20px;
+  font-size:18px;
+  color:#00ffcc;
+}
+
+.contact-section{
+  text-align:center;
+  margin-top:40px;
+}
+
+.contact-links a{
+  display:inline-block;
+  margin:8px;
+  padding:10px 15px;
+  border-radius:8px;
+  text-decoration:none;
+  color:#fff;
+  background:rgba(0,255,204,0.2);
+  border:1px solid #00ffcc;
+  transition:0.3s;
+}
+
+.contact-links a:hover{
+  background:#00ffcc;
+  color:#000;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}
+}
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}
+}
+@keyframes zoomIn{
+  from{transform:scale(0.8);opacity:0;}to{transform:scale(1);opacity:1;}
+}
+
+button{
+  background:#00ffcc;
+  border:none;
+  padding:10px 15px;
+  cursor:pointer;
+  margin-top:10px;
+  border-radius:5px;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<div class="overlay">
+
+<header>
+  <h1>GrowHigh Agency</h1>
+  <p class="summary">If you want to grow your publicity & make your business 10 times bigger within some time then contact me</p>
+</header>
+
+<section class="section">
+  <h2>Our Services</h2>
+
+  <div class="card" onclick="toggle(this)">Google Reviews<div class="details">Increase your business credibility with authentic Google reviews.</div></div>
+  <div class="card" onclick="toggle(this)">Bad Reviews Delete (Image Added)<div class="details">Remove negative reviews and protect your online reputation.</div></div>
+  <div class="card" onclick="toggle(this)">Yell Reviews<div class="details">Boost your visibility on Yell business directory.</div></div>
+  <div class="card" onclick="toggle(this)">Bark Reviews<div class="details">Get trusted reviews from Bark platform to increase trust.</div></div>
+  <div class="card" onclick="toggle(this)">Facebook Review<div class="details">Improve social proof on Facebook business page.</div></div>
+  <div class="card" onclick="toggle(this)">Website Review<div class="details">Get professional feedback to improve website trust.</div></div>
+  <div class="card" onclick="toggle(this)">Website Design<div class="details">Modern, responsive, and SEO friendly website design.</div></div>
+  <div class="card" onclick="toggle(this)">Google Map Profile SEO<div class="details">Rank higher on Google Maps for local searches.</div></div>
+  <div class="card" onclick="toggle(this)">Product Listing<div class="details">Optimize product listings for better sales conversion.</div></div>
+  <div class="card" onclick="toggle(this)">Graphics Design<div class="details">Eye-catching branding and marketing designs.</div></div>
+  <div class="card" onclick="toggle(this)">Instagram Ad Boost<div class="details">Run targeted Instagram ads for higher engagement.</div></div>
+  <div class="card" onclick="toggle(this)">Facebook Ad Boost<div class="details">Increase leads and sales through Facebook ads.</div></div>
+  <div class="card" onclick="toggle(this)">Instagram Followers<div class="details">Grow your Instagram audience organically.</div></div>
+  <div class="card" onclick="toggle(this)">Facebook Likes + Followers<div class="details">Boost your Facebook page popularity.</div></div>
+  <div class="card" onclick="toggle(this)">TikTok Followers<div class="details">Increase TikTok reach and visibility.</div></div>
+  <div class="card" onclick="toggle(this)">TikTok Likes<div class="details">Improve video engagement and ranking.</div></div>
+  <div class="card" onclick="toggle(this)">Google Profile SEO<div class="details">Optimize your Google business profile.</div></div>
+  <div class="card" onclick="toggle(this)">Website Traffic<div class="details">Drive real visitors to your website.</div></div>
+  <div class="card" onclick="toggle(this)">Website SEO<div class="details">Rank your website higher on Google search results.</div></div>
+
+</section>
+
+<section class="section stats">
+  <div class="stat-box"><h3>Work Skill</h3><p>98%</p></div>
+  <div class="stat-box"><h3>Total Projects</h3><p>873</p></div>
+  <div class="stat-box"><h3>Experience</h3><p>6 Years</p></div>
+  <div class="stat-box"><h3>Countries</h3><p>USA, UK, Italy, Germany, Australia, Ireland, Canada, France</p></div>
+</section>
+
+<section class="section">
+  <h2>Order Conditions</h2>
+  <div class="card">
+    Reviews Minimum Order: 50<br>
+    Followers Minimum Order: 10K
+  </div>
+</section>
+
+<section class="section">
+  <h2>Founder & CEO</h2>
+  <div class="card">Dip Mallik</div>
+</section>
+
+<section class="section reviews">
+  <h2>Client Reviews</h2>
+  <div class="review">"Amazing service! My business grew very fast after using GrowHigh Agency."</div>
+  <div class="review">"Very professional team and great results in SEO and ads."</div>
+  <div class="review">"Highly recommended for digital marketing services!"</div>
+</section>
+
+<section class="contact-section section">
+  <h2>Contact Me</h2>
+  <div class="contact-links">
+    <a href="https://www.facebook.com/share/1LVXwawfNQ/" target="_blank">Facebook</a>
+    <a href="https://wa.me/8801330531561" target="_blank">WhatsApp</a>
+    <a href="https://www.instagram.com/dipmallik132?igsh=MW1sN3NlM3FrcDZvNg==" target="_blank">Instagram</a>
+    <a href="mailto:dipmallik98@gmail.com">Email</a>
+    <a href="https://t.me/+8801330531561" target="_blank">Telegram</a>
+  </div>
+</section>
+
+<div class="footer">
+  © 2026 GrowHigh Agency | All Rights Reserved
+</div>
+
+</div>
+
+<script>
+function toggle(el){
+  let detail = el.querySelector('.details');
+  if(detail.style.display === "block"){
+    detail.style.display = "none";
+  }else{
+    detail.style.display = "block";
+  }
+}
+
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 60 },
+    "color": { "value": "#00ffcc" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.5 },
+    "size": { "value": 3 },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#00ffcc",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": { "enable": true, "speed": 2 }
+  }
+});
+</script>
+
+</body>
+</html>
